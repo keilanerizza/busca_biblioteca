@@ -1,0 +1,29 @@
+body{
+	font-family: sans-serif;
+	margin: 2px 18%;
+}
+
+header {
+	background-color: green;
+	text-align: center;
+	padding: 15px;
+	border-radius: 15px 15px 0px 0px;
+}
+
+header h1 {
+	color : white;
+	text-shadow: 1px 1px 1px black;
+	font-size: 40px;
+}
+
+header p {
+	color: yellow;
+}
+
+section {
+	background-color: #F5F5F5;
+}
+
+input[type="text"] {
+	display: block;
+}
