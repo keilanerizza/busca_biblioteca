@@ -1,6 +1,6 @@
 body{
 	font-family: sans-serif;
-	margin: 2px 18%;
+	/*margin: 2px 18%;*/
 }
 
 header {
@@ -22,8 +22,67 @@ header p {
 
 section {
 	background-color: #F5F5F5;
+	padding: 20px;
+	border-radius: 0px 0px 15px 15px;
 }
 
 input[type="text"] {
+	width: 95%;
+	padding: 8px;
+	border-radius: 8px 8px 8px 8px;
+	border: 1px solid #c5c5c5;
+}
+
+label {
 	display: block;
+	font-weight: bold;
+	margin: 10px 0px 10px 0px;
+}
+
+.botoes {
+	text-align: center;
+	margin-top: 15px;
+}
+
+input[type="button"], input[type="reset"] {
+	background-color: rgb(51, 122, 183);
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	border: 0px;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover {
+	cursor: pointer;
+	background-color: rgb(40, 96, 144);
+}
+
+details {
+	margin-top: 10px;
+}
+
+details summary {
+	color: blue;
+	font-size: 14px;
+	cursor: pointer;
+}
+@media only screen and (min-width: 0px){
+	body{
+		margin: 0px 2px 0px 2px;
+	}
+
+	input[type="button"], input[type="reset"]{
+		width: 90%;
+		margin-bottom: 5px;
+	}
+}
+
+@media only screen and (min-width: 700px){
+	body{
+		margin: 0px 200px 0px 200px;
+	}
+	
+	input[type="button"], input[type="reset"]{
+		width: 120px;
+	}
 }
