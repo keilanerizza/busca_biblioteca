@@ -3,6 +3,7 @@
 <head>
 	<title>?????</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/script.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
@@ -12,12 +13,12 @@
 	</header>
 
 	<section>
-		<form>
+		<form action="action">
 			<label>Autor(es):</label>
-			<input type="text" name="" placeholder="Ex: Ana; Maria; José">
+			<input type="text" name="" id="txtAutor" placeholder="Ex: Ana; Maria; José">
 
 			<label>Assunto:</label>
-			<input type="text" name="" placeholder="Ex: Apostila html">
+			<input type="text" name="" id="txtAssunto" placeholder="Ex: Apostila html">
 
 			<details>
 				<summary>Consulta avançada</summary>
@@ -25,12 +26,18 @@
 				<input type="text" name="">
 			</details>
 
+			<progress id="brrProgresso" class="barraProg" value="0" max="100">
+			</progress>
+
 			<div class="botoes">
-				<input type="button" value="Ajuda">
+				<input type="button" value="Pesquisar" onclick="pesquisarRef()" id="btnPesquisar" style="background-color: rgb(51, 122, 183);">
 				<input type="reset" value="Limpar">
-				<input type="button" value="Pesquisar">
+				<input type="button" value="Ajuda" onclick="alert('Ajuda do sistema de consulta da biblioteca. \n\nAutor(es): informe o nome de um ou mais autor ...')">
 			</div>
 		</form>
 	</section>
+
+	<script src="jquery/jquery-3.1.0.js"></script>
+	<script src="jquery/jquery.mask.js"></script>
 </body>
 </html>

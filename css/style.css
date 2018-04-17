@@ -59,6 +59,14 @@ input[type="button"]:hover, input[type="reset"]:hover {
 
 details {
 	margin-top: 10px;
+	color: blue;
+	cursor: pointer;
+	margin-top: 15px;
+	font-size:14px;
+}
+
+details label {
+	color:black;
 }
 
 details summary {
@@ -85,4 +93,14 @@ details summary {
 	input[type="button"], input[type="reset"]{
 		width: 120px;
 	}
+}
+
+.barraProg {
+    display: none;
+}
+
+.visivel {
+	width: 98%;
+    margin-top: 10px;
+	display: block;
 }
