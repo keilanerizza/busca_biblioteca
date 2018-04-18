@@ -3,7 +3,7 @@ body, html, *{
 }
 .container {
 	margin: 22vh auto;
-	max-width: 50vh;
+	max-width: 100vh;
 }
 .content {
 	padding: 1px;
@@ -24,7 +24,7 @@ header h1 {
 }
 
 header p {
-	font-size: 20px;
+	font-size: 15px;
 	color: rgba(255, 255, 255, 0.835);
 }
 

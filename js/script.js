@@ -54,7 +54,7 @@ function toggleProgressBar() {
 function iniciaCronometro() {
 	$('#brrProgresso').val($('#brrProgresso').val() + 1);
 	$('#porcentagemProgresso').text($('#brrProgresso').val() + 1 + '%');
-	cronometroBusca = setTimeout("toggleProgressBar()", 500);
+	cronometroBusca = setTimeout("toggleProgressBar()", 100);
 }
 
 function cancelaBusca() {

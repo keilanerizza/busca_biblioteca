@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Biblioteca da Keilane</title>
+	<title>Biblioteca pedagógica</title>
 	<meta charset="UTF-8">
-	<link rel="icon" sizes="192x192" href="http://cur.cursors-4u.net/toons/too-10/too1016.png">
+	<link rel="icon" sizes="192x192" href="http://designer.arianapaz.com.br/wp-content/uploads/sites/2/2015/03/livro-icon.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/script.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,8 +13,8 @@
 		<div class="content">
 			<input type="button" value="?" onclick="mostrarAjuda()" id="btnAjuda">
 			<header>
-				<h1>Biblioteca da Keilane</h1>
-				<p>De A a Z</p>
+				<h1>Biblioteca pedagógica</h1>
+				<p>Este é um sistema de busca feito especialmente para quem procura por livros direcionados à educação infantil.</p>
 			</header>
 			
 			<section>
@@ -23,16 +23,17 @@
 					<input type="text" name="autor" id="txtAutor" placeholder="Ex: Ana; Maria; José">
 					
 					<label>Assunto:</label>
-					<input type="text" name="assunto" id="txtAssunto" placeholder="Ex: Apostila html">
+					<input type="text" name="assunto" id="txtAssunto" placeholder="Ex: Animais; Letrinhas; Cores">
 					
 					<details>
 						<summary>
-							Consulta avançada
-							<div class="barraProg" id="porcentagemProgresso"></div>												
+							Consulta avançada									
 						</summary>
 						<label>ISBN:</label>
 						<input type="text" name="isbn" id="txtISBN" data-mask="999-9-99-999999-9" placeholder="Ex: Informe o International Standard Book Number (10 ou 13 dígitos)">
 					</details>
+
+					<div class="barraProg" id="porcentagemProgresso"></div>	
 					
 					<progress id="brrProgresso" class="barraProg" value="0" max="100">
 					</progress>
