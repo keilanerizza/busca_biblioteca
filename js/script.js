@@ -1,25 +1,76 @@
-function pesquisarRef(){
-	var autor = $("#txtAutor").val();
+// var global
+var brrProgressoSalvo;
 
-	if (autor.trim()==""){
-		alert("erro autor");
+function pesquisarRef() {
+	if ($('#btnPesquisar').val() === 'Cancelar') {
+		brrProgressoSalvo = $('#brrProgresso').val();
+		$('#brrProgresso').val('100');
+	}
+	validaCampos();
+}
+
+function validaCampos() {
+	let autor = $('#txtAutor').val().trim();
+	let assunto = $('#txtAssunto').val().trim();
+	let detailsOpen = $('details').attr('open');
+	let isbn;
+	if ($('details').attr('open')) {
+		isbn = $('#txtISBN').val().trim();
+	}
+	$('#txtAutor, #txtAssunto, #txtISBN').css("border", "1px solid #c5c5c5");
+	if (autor === '') {
+		mostraErroValidacao($('#txtAutor'));
+	} else if (assunto === '') {
+		mostraErroValidacao($('#txtAssunto'))
+	} else if (detailsOpen && isbn === '') {
+		mostraErroValidacao($('#txtISBN'))
+	} else {
+		toggleProgressBar();
 	}
 
-	else {
-		var barraProgresso = $("#brrProgresso");
-		barraProgresso.toggleClass("visivel");
-		var btPesquisar = $("#btnPesquisar");
-		btPesquisar.style
-		btPesquisar.value="Cancelar";
-		
-		if(barraProgresso.value<100){
-			barraProgresso.value++;
-			setTimeout("pesquisarRef()",40);
-		}
-		else{
-			alert("nada encontrado");
-			btPesquisar.value="Pesquisar";
-		}
+}
+
+function mostraErroValidacao(field) {
+	alert('Por favor, preencha o campo ' + field[0].name + '.');
+	$(field).css("border", "2px solid #ff000085");
+	$(field).focus();
+}
+
+function toggleProgressBar() {
+	$('#brrProgresso').addClass('visivel');
+	$('#btnPesquisar').val('Cancelar');
+	
+	if ($('#brrProgresso').val() < 99) {
+		iniciaCronometro();
+	} else if($('#brrProgresso').val() === 100) {
+		cancelaBusca()
+	} else {
+		mostrarResultado()
 	}
 }
 
+function iniciaCronometro() {
+	$('#brrProgresso').val($('#brrProgresso').val() + 1);
+	cronometroBusca = setTimeout("toggleProgressBar()", 20);
+}
+
+function resetaBarra() {
+	$('#brrProgresso').val('0');
+}
+
+function cancelaBusca() {
+	let confirmacaoDeCancelamento = confirm('Deseja parar a pesquisa ?')
+	if (confirmacaoDeCancelamento) {
+		mostrarResultado();
+	} else {
+		$('#brrProgresso').val(brrProgressoSalvo);
+	}
+}
+
+function mostrarResultado() {
+	clearTimeout(cronometroBusca);
+	$('#brrProgresso').removeClass('visivel');
+	alert('Nada encontrado.');
+	$('#btnPesquisar').val('Pesquisar');
+	resetaBarra();
+}

@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>?????</title>
+	<title>Biblioteca do IFTM</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/script.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
-	<header>
-		<h1>Biblioteca do IFTM</h1>
-		<p>Descrição do sistema</p>
-	</header>
-
-	<section>
-		<form action="action">
-			<label>Autor(es):</label>
-			<input type="text" name="" id="txtAutor" placeholder="Ex: Ana; Maria; José">
-
-			<label>Assunto:</label>
-			<input type="text" name="" id="txtAssunto" placeholder="Ex: Apostila html">
-
-			<details>
-				<summary>Consulta avançada</summary>
-				<label>ISBN:</label>
-				<input type="text" name="">
-			</details>
-
-			<progress id="brrProgresso" class="barraProg" value="0" max="100">
-			</progress>
-
-			<div class="botoes">
-				<input type="button" value="Pesquisar" onclick="pesquisarRef()" id="btnPesquisar" style="background-color: rgb(51, 122, 183);">
-				<input type="reset" value="Limpar">
-				<input type="button" value="Ajuda" onclick="alert('Ajuda do sistema de consulta da biblioteca. \n\nAutor(es): informe o nome de um ou mais autor ...')">
-			</div>
-		</form>
-	</section>
-
+	<div class="container">
+		<div class="content">
+			<header>
+				<h1>Biblioteca do IFTM</h1>
+				<p>Descrição do sistema</p>
+			</header>
+			
+			<section>
+				<form action="action">
+					<label>Autor(es):</label>
+					<input type="text" name="autor" id="txtAutor" placeholder="Ex: Ana; Maria; José">
+					
+					<label>Assunto:</label>
+					<input type="text" name="assunto" id="txtAssunto" placeholder="Ex: Apostila html">
+					
+					<details>
+						<summary>Consulta avançada</summary>
+						<label>ISBN:</label>
+						<input type="text" name="isbn" id="txtISBN" placeholder="Ex: Informe o International Standard Book Number (10 ou 13 dígitos)">
+					</details>
+					
+					<progress id="brrProgresso" class="barraProg" value="0" max="100">
+					</progress>
+					
+					<div class="botoes">
+						<input type="button" value="Pesquisar" onclick="pesquisarRef()" id="btnPesquisar" style="background-color: rgb(51, 122, 183);">
+						<input type="reset" value="Limpar">
+						<input type="button" value="Ajuda" onclick="alert('Ajuda do sistema de consulta da biblioteca. \n\nAutor(es): informe o nome de um ou mais autor ...')">
+					</div>
+				</form>
+			</section>
+		</div>
+	</div>
+	
 	<script src="jquery/jquery-3.1.0.js"></script>
 	<script src="jquery/jquery.mask.js"></script>
 </body>
