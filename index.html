@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Biblioteca do IFTM</title>
+	<title>Biblioteca da Keilane</title>
+	<meta charset="UTF-8">
+	<link rel="icon" sizes="192x192" href="http://cur.cursors-4u.net/toons/too-10/too1016.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/script.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,9 +11,10 @@
 <body>
 	<div class="container">
 		<div class="content">
+			<input type="button" value="?" onclick="mostrarAjuda()" id="btnAjuda">
 			<header>
-				<h1>Biblioteca do IFTM</h1>
-				<p>Descrição do sistema</p>
+				<h1>Biblioteca da Keilane</h1>
+				<p>De A a Z</p>
 			</header>
 			
 			<section>
@@ -23,18 +26,19 @@
 					<input type="text" name="assunto" id="txtAssunto" placeholder="Ex: Apostila html">
 					
 					<details>
-						<summary>Consulta avançada</summary>
+						<summary>
+							Consulta avançada
+							<div class="barraProg" id="porcentagemProgresso"></div>												
+						</summary>
 						<label>ISBN:</label>
 						<input type="text" name="isbn" id="txtISBN" placeholder="Ex: Informe o International Standard Book Number (10 ou 13 dígitos)">
 					</details>
 					
 					<progress id="brrProgresso" class="barraProg" value="0" max="100">
 					</progress>
-					
 					<div class="botoes">
-						<input type="button" value="Pesquisar" onclick="pesquisarRef()" id="btnPesquisar" style="background-color: rgb(51, 122, 183);">
-						<input type="reset" value="Limpar">
-						<input type="button" value="Ajuda" onclick="alert('Ajuda do sistema de consulta da biblioteca. \n\nAutor(es): informe o nome de um ou mais autor ...')">
+						<input type="button" value="Pesquisar" onclick="pesquisarRef()" id="btnPesquisar">
+						<input type="reset" value="Limpar" id="btnLimpar">
 					</div>
 				</form>
 			</section>

@@ -38,39 +38,45 @@ function mostraErroValidacao(field) {
 
 function toggleProgressBar() {
 	$('#brrProgresso').addClass('visivel');
+	$('#porcentagemProgresso').addClass('visivel');
 	$('#btnPesquisar').val('Cancelar');
+	$('#btnPesquisar').css('background-color', 'red');
 	
 	if ($('#brrProgresso').val() < 99) {
 		iniciaCronometro();
 	} else if($('#brrProgresso').val() === 100) {
 		cancelaBusca()
 	} else {
-		mostrarResultado()
+		resetaBarra()
 	}
 }
 
 function iniciaCronometro() {
 	$('#brrProgresso').val($('#brrProgresso').val() + 1);
-	cronometroBusca = setTimeout("toggleProgressBar()", 20);
-}
-
-function resetaBarra() {
-	$('#brrProgresso').val('0');
+	$('#porcentagemProgresso').text($('#brrProgresso').val() + 1 + '%');
+	cronometroBusca = setTimeout("toggleProgressBar()", 500);
 }
 
 function cancelaBusca() {
 	let confirmacaoDeCancelamento = confirm('Deseja parar a pesquisa ?')
 	if (confirmacaoDeCancelamento) {
-		mostrarResultado();
+		resetaBarra();
 	} else {
 		$('#brrProgresso').val(brrProgressoSalvo);
 	}
 }
 
-function mostrarResultado() {
+function resetaBarra() {
 	clearTimeout(cronometroBusca);
 	$('#brrProgresso').removeClass('visivel');
+	$('#porcentagemProgresso').removeClass('visivel');
 	alert('Nada encontrado.');
 	$('#btnPesquisar').val('Pesquisar');
-	resetaBarra();
+	$('#btnPesquisar').css('background-color', '#4CAF50');
+	$('#brrProgresso').val('0');
+	$('#porcentagemProgresso').text('0');
+}
+
+function mostrarAjuda() {
+	alert('Ajuda do sistema de consulta da biblioteca. \n\nAutor(es): informe o nome de um ou mais autor ...')
 }

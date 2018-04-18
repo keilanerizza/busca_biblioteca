@@ -10,7 +10,7 @@ body, html, *{
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 header {
-	background-color: green;
+	background-color: #663399;
 	text-align: center;
 	padding: 15px;
 	border-radius: 2px;
@@ -20,6 +20,7 @@ header h1 {
 	color : white;
 	text-shadow: 1px 1px 1px black;
 	font-size: 40px;
+	word-break: break-all;
 }
 
 header p {
@@ -44,6 +45,7 @@ label {
 	display: block;
 	font-weight: bold;
 	margin: 10px 0px 10px 0px;
+	color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .botoes {
@@ -51,18 +53,44 @@ label {
 	margin-top: 15px;
 }
 
-input[type="button"], input[type="reset"] {
-	background-color: rgb(51, 122, 183);
+#btnPesquisar,
+#btnLimpar,
+#btnAjuda {
 	color: white;
 	padding: 10px;
 	border-radius: 2px;
 	border: 0px;
 	transition: .5s all;
+	font-weight: bold;
 }
 
-input[type="button"]:hover, input[type="reset"]:hover {
+#btnPesquisar {
+	background-color: #4CAF50;
+}
+#btnPesquisar:hover {
+	background-color: rgba(76, 175, 79, 0.733);
+}
+#btnLimpar {
+	background-color: white;
+	color: rgba(0, 0, 0, 0.7)
+}
+#btnAjuda {
+	float: right;
+    width: 25px;
+    padding: 0;
+    border: 2px solid white;
+    border-radius: 0;
+    color: rgba(0, 0, 0, 0.7);
+    border-bottom-left-radius: 2px;
+}
+#btnAjuda:hover {	
 	cursor: pointer;
-	background-color: rgb(40, 96, 144) !important;
+}
+
+#btnPesquisar:hover,
+#btnLimpar:hover,
+#btnAjuda:hover {
+	cursor: pointer;
 	transition: .5s all;
 }
 
@@ -72,10 +100,6 @@ details {
 	cursor: pointer;
 	margin-top: 15px;
 	font-size:14px;
-}
-
-details label {
-	color:black;
 }
 
 details summary {
