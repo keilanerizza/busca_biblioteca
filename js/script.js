@@ -10,6 +10,8 @@ function pesquisarRef() {
 }
 
 function validaCampos() {
+	var regexAutor = /^[a-z]{2,}$/i;
+	var regexISBN = /[a-z0-9]/i;
 	let autor = $('#txtAutor').val().trim();
 	let assunto = $('#txtAssunto').val().trim();
 	let detailsOpen = $('details').attr('open');
@@ -18,11 +20,11 @@ function validaCampos() {
 		isbn = $('#txtISBN').val().trim();
 	}
 	$('#txtAutor, #txtAssunto, #txtISBN').css("border", "1px solid #c5c5c5");
-	if (autor === '') {
+	if (autor === '' || !regexAutor.test(autor)) {
 		mostraErroValidacao($('#txtAutor'));
 	} else if (assunto === '') {
 		mostraErroValidacao($('#txtAssunto'))
-	} else if (detailsOpen && isbn === '') {
+	} else if (detailsOpen && (isbn === '' || !regexISBN.test(isbn))) {
 		mostraErroValidacao($('#txtISBN'))
 	} else {
 		toggleProgressBar();
@@ -78,5 +80,8 @@ function resetaBarra() {
 }
 
 function mostrarAjuda() {
-	alert('Ajuda do sistema de consulta da biblioteca. \n\nAutor(es): informe o nome de um ou mais autor ...')
+	alert(`Ajuda do sistema de consulta da biblioteca. 
+	\nAutor(es): informe o nome de um ou mais autor.
+	\nAssunto(s): Informe os assuntos que deseja na busca. 
+	\nObs.: Para realizar a busca é necessário que todos os campos visíveis na tela estejam preenchidos`)
 }
