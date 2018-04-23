@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<link rel="icon" sizes="192x192" href="http://designer.arianapaz.com.br/wp-content/uploads/sites/2/2015/03/livro-icon.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/script.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+
 </head>
 <body>
 	<div class="container">
@@ -18,19 +18,19 @@
 			</header>
 			
 			<section>
-				<form action="action">
+				<form action="action" autocomplete="on" id="form">
 					<label>Autor(es):</label>
-					<input type="text" name="autor" id="txtAutor" placeholder="Ex: Ana; Maria; José">
+					<input title="Digite aqui o nome dos autores que deseja buscar" type="text" name="autor" id="txtAutor" placeholder="Ex: Ana; Maria; José">
 					
 					<label>Assunto(s):</label>
-					<input type="text" name="assunto" id="txtAssunto" placeholder="Ex: Animais; Letrinhas; Cores">
+					<input title="Digite aqui os assuntos que deseja buscar" type="text" name="assunto" id="txtAssunto" placeholder="Ex: Animais; Letrinhas; Cores">
 					
 					<details>
 						<summary>
 							Consulta avançada									
 						</summary>
 						<label>ISBN:</label>
-						<input type="text" name="isbn" id="txtISBN" data-mask="999-9-99-999999-9" placeholder="Ex: Informe o International Standard Book Number (10 ou 13 dígitos)">
+						<input type="text" name="isbn" id="txtISBN" data-mask="AAA-A-AA-AAAAAA-A" placeholder="Ex: Informe o International Standard Book Number (10 ou 13 dígitos)">
 					</details>
 
 					<div class="barraProg" id="porcentagemProgresso"></div>	
@@ -38,7 +38,7 @@
 					<progress id="brrProgresso" class="barraProg" value="0" max="100">
 					</progress>
 					<div class="botoes">
-						<input type="button" value="Pesquisar" onclick="pesquisarRef()" id="btnPesquisar">
+						<input type="submit" value="Pesquisar" id="btnPesquisar">
 						<input type="reset" value="Limpar" id="btnLimpar">
 					</div>
 				</form>
@@ -48,5 +48,6 @@
 	
 	<script src="jquery/jquery-3.1.0.js"></script>
 	<script src="jquery/jquery.mask.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>

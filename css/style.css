@@ -112,7 +112,7 @@ details summary {
 		margin: 0px 2px 0px 2px;
 	}
 
-	input[type="button"], input[type="reset"]{
+	input[type="submit"], input[type="reset"]{
 		width: 90%;
 		margin-bottom: 5px;
 	}
@@ -123,7 +123,7 @@ details summary {
 		margin: 0px 200px 0px 200px;
 	}
 	
-	input[type="button"], input[type="reset"]{
+	input[type="submit"], input[type="reset"]{
 		width: 120px;
 	}
 }

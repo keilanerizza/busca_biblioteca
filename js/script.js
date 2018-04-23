@@ -1,17 +1,22 @@
 // var global
 var brrProgressoSalvo;
 
-function pesquisarRef() {
-	if ($('#btnPesquisar').val() === 'Cancelar') {
-		brrProgressoSalvo = $('#brrProgresso').val();
-		$('#brrProgresso').val('100');
-	}
-	validaCampos();
-}
+$(document).ready(function() { 
+	$("#form").submit(function(){
+		
+		if ($('#btnPesquisar').val() === 'Cancelar') {
+			brrProgressoSalvo = $('#brrProgresso').val();
+			$('#brrProgresso').val('100');
+		}
+		validaCampos();
+		
+		return false;
+	});
+});
 
 function validaCampos() {
 	var regexAutor = /^[a-z]{2,}$/i;
-	var regexISBN = /[a-z0-9]/i;
+	var regexISBN = /^[a-z0-9]$/i;
 	let autor = $('#txtAutor').val().trim();
 	let assunto = $('#txtAssunto').val().trim();
 	let detailsOpen = $('details').attr('open');
@@ -29,11 +34,16 @@ function validaCampos() {
 	} else {
 		toggleProgressBar();
 	}
-
 }
 
 function mostraErroValidacao(field) {
-	alert('Por favor, preencha o campo ' + field[0].name + '.');
+	if(field[0].name === "autor"){
+		alert('O campo Autor(es) deve ser preenchido e conter apenas letras.');
+	} else if(field[0].name === "isbn"){
+		alert('O campo isbn deve ser preenchido e conter apenas letras e números.');
+	} else {
+		alert('Por favor, preencha o campo ' + field[0].name + '.');
+	}
 	$(field).css("border", "2px solid #ff000085");
 	$(field).focus();
 }
